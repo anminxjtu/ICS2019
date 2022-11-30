@@ -57,7 +57,7 @@ static int cmd_info(char *args){
     return 0;
   }
   else{
-    printf("No such command!");
+    printf("No such command!\n");
   }
   return 0;
 }
