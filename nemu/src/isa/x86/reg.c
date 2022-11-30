@@ -41,10 +41,10 @@ void reg_test() {
 }
 
 void isa_reg_display() {
-  printf("%%eax: 0x%-8x\t",cpu.eax);
-  printf("%%  ax: 0x%-8x\t",cpu.eax & 0xffff);
-  printf("%%  ah: 0x%-8x\t",(cpu.eax >> 8) & 0xff);
-  printf("%%  al: 0x%-8x\n",cpu.eax & 0xff);
+  printf("%%eax: 0x%-12x",cpu.eax);
+  printf("%%ax: 0x%-12x",cpu.eax & 0xffff);
+  printf("%%ah: 0x%-12x",(cpu.eax >> 8) & 0xff);
+  printf("%%al: 0x%-812x",cpu.eax & 0xff);
   
   printf("%%ebx: 0x%-8x\t",cpu.ebx);
   printf("%%bx: 0x%-8x\t",cpu.ebx & 0xffff);
