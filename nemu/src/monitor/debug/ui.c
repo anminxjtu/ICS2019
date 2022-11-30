@@ -62,6 +62,24 @@ static int cmd_info(char *args){
   return 0;
 }
 
+static int cmd_x(char *args){
+  char *N = strtok(args, " ");
+  if (N == NULL) { printf("Error occurs when anlysis cmd_x!\n");
+    return 0; }
+
+    /* treat the remaining string as the arguments,
+     * which may need further parsing
+     */
+    char *expr = N + strlen(N) + 1;
+    /*if (expr >= str_end) {
+      expr = NULL;
+    }*/
+    char *a = '\0';
+    if(expr>=a){
+    printf("expr:%s",expr);}
+  return 0;
+}
+
 static struct {
   char *name;
   char *description;
@@ -71,7 +89,8 @@ static struct {
   { "c", "Continue the execution of the program", cmd_c },
   { "q", "Exit NEMU", cmd_q },
   { "si", "Continue N step", cmd_si },
-  { "info", "Query the program", cmd_info}
+  { "info", "Query the program", cmd_info},
+  { "x", "Scan DRAM", cmd_x},
 
   /* TODO: Add more commands */
 
