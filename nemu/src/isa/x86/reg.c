@@ -41,10 +41,10 @@ void reg_test() {
 }
 
 void isa_reg_display() {
-  printf("%%eax: 0x%-8x",cpu.eax);
-  printf("%%ax: 0x%-8x",cpu.eax & 0xffff);
-  printf("%%ah: 0x%-8x",(cpu.eax >> 8) & 0xff);
-  printf("%%al: 0x%-8x",cpu.eax & 0xff);
+  printf("%%eax: 0x%-8x\t",cpu.eax);
+  printf("%%ax: 0x%-8x\t",cpu.eax & 0xffff);
+  printf("%%ah: 0x%-8x\t",(cpu.eax >> 8) & 0xff);
+  printf("%%al: 0x%-8x\n",cpu.eax & 0xff);
   
   printf("%%ebx: 0x%-8x\t",cpu.ebx);
   printf("%%bx: 0x%-8x\t",cpu.ebx & 0xffff);
@@ -60,6 +60,11 @@ void isa_reg_display() {
   printf("%%dx: 0x%-8x\t",cpu.edx & 0xffff);
   printf("%%dh: 0x%-8x\t",(cpu.edx >> 8) & 0xff);
   printf("%%dl: 0x%-8x\n",cpu.edx & 0xff);
+  
+  printf("%%ebp: 0x%-8x\t",cpu.ebp);
+  printf("%%bp: 0x%-8x\t",cpu.ebp & 0xffff);
+  printf("%%bph: 0x%-8x\t",(cpu.ebp >> 8) & 0xff);
+  printf("%%bpl: 0x%-8x\n",cpu.ebp & 0xff);
 }
 
 uint32_t isa_reg_str2val(const char *s, bool *success) {
