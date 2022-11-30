@@ -54,7 +54,7 @@ void isa_reg_display() {
   printf("%%ecx: 0x%-12x",cpu.ecx);
   printf("%%cx: 0x%-12x",cpu.ecx & 0xffff);
   printf("%%ch: 0x%-12x",(cpu.ecx >> 8) & 0xff);
-  printf("%%cl: 0x%-8x\n",cpu.ecx & 0xff);
+  printf("%%cl: 0x%-12x\n",cpu.ecx & 0xff);
   
   printf("%%edx: 0x%-12x",cpu.edx);
   printf("%%dx: 0x%-12x",cpu.edx & 0xffff);
@@ -65,6 +65,22 @@ void isa_reg_display() {
   printf("%%bp: 0x%-12x",cpu.ebp & 0xffff);
   printf("%%bph: 0x%-11x",(cpu.ebp >> 8) & 0xff);
   printf("%%bpl: 0x%-11x\n",cpu.ebp & 0xff);
+  
+  printf("%%esi: 0x%-12x",cpu.esi);
+  printf("%%si: 0x%-12x",cpu.esi & 0xffff);
+  printf("%%sih: 0x%-11x",(cpu.esi >> 8) & 0xff);
+  printf("%%sil: 0x%-11x\n",cpu.esi & 0xff);
+  
+  printf("%%edi: 0x%-12x",cpu.edi);
+  printf("%%di: 0x%-12x",cpu.edi & 0xffff);
+  printf("%%dih: 0x%-11x",(cpu.edi >> 8) & 0xff);
+  printf("%%dil: 0x%-11x\n",cpu.edi & 0xff);
+  
+  printf("%%esp: 0x%-12x",cpu.esp);
+  printf("%%sp: 0x%-12x",cpu.esp & 0xffff);
+  printf("%%sph: 0x%-11x",(cpu.esp >> 8) & 0xff);
+  printf("%%spl: 0x%-11x\n",cpu.esp & 0xff);
+  
 }
 
 uint32_t isa_reg_str2val(const char *s, bool *success) {
