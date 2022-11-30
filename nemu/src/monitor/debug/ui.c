@@ -83,7 +83,7 @@ static int cmd_x(char *args){
       /*uint32_t opcode = instr_fetch(cpu.pc, 1);
       decinfo.opcode = opcode;*/
       cpu.pc++;
-      /*printf("inst:%x",opcode);*/
+      printf("inst:%x",cpu.pc);
     }
   return 0;
 }
