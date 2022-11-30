@@ -9,6 +9,7 @@
 
 void cpu_exec(uint64_t);
 void isa_reg_display();
+uint32_t instr_fetch(vaddr_t *pc, int len);
 
 /* We use the `readline' library to provide more flexibility to read from stdin. */
 static char* rl_gets() {
@@ -77,8 +78,12 @@ static int cmd_x(char *args){
     char *a = '\0';
     if(expr>=a){
     printf("expr:%s\n",expr);}
+    cpu.pc = atoi(expr);
     for(int i = 1;i <= atoi(N);i++){
-      printf("expr:%s\n",expr);
+      /*uint32_t opcode = instr_fetch(cpu.pc, 1);
+      decinfo.opcode = opcode;*/
+      cpu.pc++;
+      /*printf("inst:%x",opcode);*/
     }
   return 0;
 }
