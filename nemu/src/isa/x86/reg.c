@@ -50,6 +50,16 @@ void isa_reg_display() {
   printf("%%bx: 0x%x\t",cpu.ebx & 0xffff);
   printf("%%bh: 0x%x\t",(cpu.ebx >> 8) & 0xff);
   printf("%%bl: 0x%x\n",cpu.ebx & 0xff);
+  
+  printf("%%ecx: 0x%x\t",cpu.ecx);
+  printf("%%cx: 0x%x\t",cpu.ecx & 0xffff);
+  printf("%%ch: 0x%x\t",(cpu.ecx >> 8) & 0xff);
+  printf("%%cl: 0x%x\n",cpu.ecx & 0xff);
+  
+  printf("%%edx: 0x%x\t",cpu.edx);
+  printf("%%dx: 0x%x\t",cpu.edx & 0xffff);
+  printf("%%dh: 0x%x\t",(cpu.edx >> 8) & 0xff);
+  printf("%%dl: 0x%x\n",cpu.edx & 0xff);
 }
 
 uint32_t isa_reg_str2val(const char *s, bool *success) {
