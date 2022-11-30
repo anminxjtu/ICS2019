@@ -77,6 +77,9 @@ static int cmd_x(char *args){
     char *a = '\0';
     if(expr>=a){
     printf("expr:%s\n",expr);}
+    for(int i = 1;i <= atoi(N);i++){
+      printf("expr:%s\n",expr);
+    }
   return 0;
 }
 
