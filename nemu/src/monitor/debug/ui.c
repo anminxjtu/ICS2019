@@ -76,7 +76,7 @@ static int cmd_x(char *args){
     }*/
     char *a = '\0';
     if(expr>=a){
-    printf("expr:%s",expr);}
+    printf("expr:%s\n",expr);}
   return 0;
 }
 
