@@ -63,8 +63,8 @@ void isa_reg_display() {
   
   printf("%%ebp: 0x%-12x",cpu.ebp);
   printf("%%bp: 0x%-12x",cpu.ebp & 0xffff);
-  printf("%%bph: 0x%2x",(cpu.ebp >> 8) & 0xff);
-  printf("%%bpl: 0x%2x\n",cpu.ebp & 0xff);
+  printf("%%bph: 0x%-11x",(cpu.ebp >> 8) & 0xff);
+  printf("%%bpl: 0x%-11x\n",cpu.ebp & 0xff);
 }
 
 uint32_t isa_reg_str2val(const char *s, bool *success) {
