@@ -11,6 +11,7 @@ void cpu_exec(uint64_t);
 void isa_reg_display();
 uint32_t instr_fetch(vaddr_t *pc, int len);
 uint32_t paddr_read(paddr_t addr, int len);
+char* hex_dec(char *input);
 
 /* We use the `readline' library to provide more flexibility to read from stdin. */
 static char* rl_gets() {
