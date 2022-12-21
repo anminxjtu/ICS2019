@@ -10,6 +10,7 @@
 void cpu_exec(uint64_t);
 void isa_reg_display();
 uint32_t instr_fetch(vaddr_t *pc, int len);
+uint32_t paddr_read(paddr_t addr, int len);
 
 /* We use the `readline' library to provide more flexibility to read from stdin. */
 static char* rl_gets() {
@@ -85,6 +86,7 @@ static int cmd_x(char *args){
       cpu.pc++;
       printf("inst:%x",cpu.pc);
     }*/
+    paddr_read(atoi(expr), atoi(N));
   return 0;
 }
 
