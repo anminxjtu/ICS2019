@@ -92,6 +92,7 @@ static int cmd_x(char *args){
     // printf("expr_value:%d\n",expr_value);
     // printf("atoi_N:%d\n",atoi(N));
     for(int i = 1;i <=atoi(N);i++){
+    	printf("0x%d->0x%d:",expr_value + 4,expr_value);
     	printf("%08x\n",paddr_read(expr_value, 4));
     	expr_value = expr_value + 4;
     }
