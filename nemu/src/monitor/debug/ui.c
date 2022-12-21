@@ -93,7 +93,7 @@ static int cmd_x(char *args){
     // printf("%s\n",expr_decimal);
     
     sscanf(expr,"%x",&expr_value);
-    // printf("expr_value:%d\n",expr_value);
+     printf("expr_value:%d\n",expr_value);
     // printf("atoi_N:%d\n",atoi(N));
     for(int i = 1;i <=atoi(N);i++){
     	printf("0x%d -> 0x%d:\t",addr_index + 4,addr_index);
