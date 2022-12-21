@@ -87,6 +87,9 @@ static int cmd_x(char *args){
       printf("inst:%x",cpu.pc);
     }*/
     printf("atoi_expr:%d\n",atoi(expr));
+    int expr_value = 0;
+    sscanf(expr,"%x",&expr_value);
+    printf("expr_value:%d\n",expr_value);
     printf("atoi_N:%d\n",atoi(N));
     printf("%d\n",paddr_read(atoi(expr), atoi(N)));
   return 0;
