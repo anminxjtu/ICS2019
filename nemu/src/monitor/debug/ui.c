@@ -88,7 +88,7 @@ static int cmd_x(char *args){
     }*/
     //printf("atoi_expr:%d\n",atoi(expr));
     int expr_value = 0;
-    char *expr_decimal = &expr[2];
+    char *expr_decimal = expr+2;
     printf("%s\n",expr_decimal);
     
     sscanf(expr,"%x",&expr_value);
