@@ -78,7 +78,7 @@ static int cmd_x(char *args){
     }*/
     //char *a = '\0';
     //(expr>=a){
-   //rintf("expr:%s\n",expr);}
+   // printf("expr:%s\n",expr);}
     /* cpu.pc = atoi(expr);
     for(int i = 1;i <= atoi(N);i++){
       uint32_t opcode = instr_fetch(cpu.pc, 1);
@@ -89,8 +89,8 @@ static int cmd_x(char *args){
     //printf("atoi_expr:%d\n",atoi(expr));
     int expr_value = 0;
     sscanf(expr,"%x",&expr_value);
-    printf("expr_value:%d\n",expr_value);
-    printf("atoi_N:%d\n",atoi(N));
+    // printf("expr_value:%d\n",expr_value);
+    // printf("atoi_N:%d\n",atoi(N));
     for(int i = 1;i <=atoi(N);i++){
     	printf("%08x\n",paddr_read(expr_value, 4));
     	expr_value = expr_value + 4;
