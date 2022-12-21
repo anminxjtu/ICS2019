@@ -91,7 +91,7 @@ static int cmd_x(char *args){
     sscanf(expr,"%x",&expr_value);
     printf("expr_value:%d\n",expr_value);
     printf("atoi_N:%d\n",atoi(N));
-    printf("%d\n",paddr_read(expr_value, 4));
+    printf("%x\n",paddr_read(expr_value, 4));
   return 0;
 }
 
