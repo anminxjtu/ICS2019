@@ -78,13 +78,13 @@ static int cmd_x(char *args){
     char *a = '\0';
     if(expr>=a){
     printf("expr:%s\n",expr);}
-    cpu.pc = atoi(expr);
+    /* cpu.pc = atoi(expr);
     for(int i = 1;i <= atoi(N);i++){
-      /*uint32_t opcode = instr_fetch(cpu.pc, 1);
-      decinfo.opcode = opcode;*/
+      uint32_t opcode = instr_fetch(cpu.pc, 1);
+      decinfo.opcode = opcode;
       cpu.pc++;
       printf("inst:%x",cpu.pc);
-    }
+    }*/
   return 0;
 }
 
