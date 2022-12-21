@@ -86,6 +86,8 @@ static int cmd_x(char *args){
       cpu.pc++;
       printf("inst:%x",cpu.pc);
     }*/
+    printf("atoi_expr:%d\n",atoi(expr));
+    printf("atoi_N:%d\n",atoi(N));
     printf("%d\n",paddr_read(atoi(expr), atoi(N)));
   return 0;
 }
