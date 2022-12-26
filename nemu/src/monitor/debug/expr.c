@@ -83,7 +83,7 @@ static bool make_token(char *e) {
         tokens[i].type = rules[i].token_type;
 	printf("%d\n",tokens[i].type);
         switch (rules[i].token_type) {
-          default: TODO();
+          //default: TODO();
         }
 
         break;
