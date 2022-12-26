@@ -27,7 +27,7 @@ static struct rule {
   {"==", TK_EQ},        // equal
   {"[a-z]", 2},
   {"[\(]", 3},
-  {"[2], 5"}
+  {"[0-9], 5"}
 };
 
 #define NR_REGEX (sizeof(rules) / sizeof(rules[0]) )
