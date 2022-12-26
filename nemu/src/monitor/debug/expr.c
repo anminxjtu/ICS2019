@@ -24,7 +24,7 @@ static struct rule {
   {"\\D", 0},
   {" +", TK_NOTYPE},    // spaces
   {"\\+", '+'},         // plus
-  {"-", '-'},
+  {"\\-", '-'},
   {"==", TK_EQ},        // equal
  
   {"[\(]", 3},
