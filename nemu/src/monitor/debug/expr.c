@@ -21,7 +21,7 @@ static struct rule {
   /* TODO: Add more rules.
    * Pay attention to the precedence level of different rules.
    */
-  {"\\D", 0},
+  {"[\\d]", 0},
   {" +", TK_NOTYPE},    // spaces
   {"\\+", '+'},         // plus
   {"\\-", '-'},
