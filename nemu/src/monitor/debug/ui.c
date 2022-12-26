@@ -12,6 +12,7 @@ void isa_reg_display();
 uint32_t instr_fetch(vaddr_t *pc, int len);
 uint32_t paddr_read(paddr_t addr, int len);
 char* hex_dec(char *input);
+bool make_token(char *e);
 
 /* We use the `readline' library to provide more flexibility to read from stdin. */
 static char* rl_gets() {
@@ -111,6 +112,8 @@ static int cmd_p(char *args){
   /* extract the first argument */
   //char *arg = strtok(NULL, " ");
   printf("%s\n",args);
+  make_token(args);
+  
   return 0;
 }
 
