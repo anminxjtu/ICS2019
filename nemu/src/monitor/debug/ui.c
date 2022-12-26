@@ -110,7 +110,7 @@ static int cmd_x(char *args){
 static int cmd_p(char *args){
   /* extract the first argument */
   //char *arg = strtok(NULL, " ");
-  printf("%c\n",*args);
+  printf("%s\n",args);
   return 0;
 }
 
