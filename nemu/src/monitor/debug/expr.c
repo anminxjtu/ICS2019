@@ -25,7 +25,8 @@ static struct rule {
   {" +", TK_NOTYPE},    // spaces
   {"\\+", '+'},         // plus
   {"==", TK_EQ},        // equal
-  {"\\d", 2}
+  {"\\d", 2},
+  {".", 3}
 };
 
 #define NR_REGEX (sizeof(rules) / sizeof(rules[0]) )
