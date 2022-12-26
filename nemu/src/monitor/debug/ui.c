@@ -108,7 +108,9 @@ static int cmd_x(char *args){
 }
 
 static int cmd_p(char *args){
-  printf("%d\n",*args);
+  /* extract the first argument */
+  char *arg = strtok(NULL, " ");
+  printf("%d\n",*arg);
   return 0;
 }
 
