@@ -107,6 +107,11 @@ static int cmd_x(char *args){
   return 0;
 }
 
+static int cmd_p(char *args){
+  printf("%d\n",*args);
+  return 0;
+}
+
 static struct {
   char *name;
   char *description;
@@ -118,6 +123,7 @@ static struct {
   { "si", "Continue N step", cmd_si },
   { "info", "Query the program", cmd_info},
   { "x", "Scan DRAM", cmd_x},
+  { "p", "Evaluate the EXPR", cmd_p},
 
   /* TODO: Add more commands */
 
