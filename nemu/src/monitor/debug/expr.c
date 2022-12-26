@@ -25,9 +25,10 @@ static struct rule {
   {" +", TK_NOTYPE},    // spaces
   {"\\+", '+'},         // plus
   {"==", TK_EQ},        // equal
-  {"[a-z]", 2},
+ 
   {"[\(]", 3},
   {"[d]", 5},
+  {"[a-z]", 2},
 
 };
 
