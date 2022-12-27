@@ -125,6 +125,7 @@ static bool make_token(char *e) {
   }
   
   check_parentheses(0,nr_token);
+  printf("------------------\n");
 
   return true;
 }
