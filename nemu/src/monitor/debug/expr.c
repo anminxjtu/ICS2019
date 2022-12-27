@@ -105,9 +105,9 @@ static bool make_token(char *e) {
           	for (i=0; i < substr_len; i++){
                   //tokens[nr_token].str[i] = substr_start[i];
                   tokens[nr_token].str[i] = * (substr_start+i);
-                  printf("%c",tokens[nr_token].str[i]);
+                  //printf("%c",tokens[nr_token].str[i]);
           	}
-          	printf("\n");
+          	//printf("\n");
           	break;
         }
 	nr_token++;
