@@ -132,7 +132,7 @@ static bool make_token(char *e) {
 
 bool check_parentheses(int p, int q){
 
-	char tokens_containers[q-p+1];
+	int tokens_containers[q-p+1];
 	int par_num = 0;
 	printf("in the function\n");
 	//printf("%d\n",tokens[0].type);
