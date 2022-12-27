@@ -136,7 +136,7 @@ bool check_parentheses(int p, int q){
 	int par_num = 0;
 	printf("in the function\n");
 	for (int i = 0; i < q-p+1; i++){
-	    printf("tokens[i+p].type:%c\n",tokens[i+p].type);
+	    printf("tokens[i+p%d].type:%c\n",i+p,tokens[i+p].type);
 	  if (tokens[i+p].type == '(' || tokens[i+p].type == ')'){
 	    tokens_containers[par_num] = tokens[i+p].type;
 	    par_num++;
