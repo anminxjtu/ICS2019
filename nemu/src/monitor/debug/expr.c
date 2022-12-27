@@ -61,8 +61,8 @@ void init_regex() {
 
 typedef struct token {
   int type;
-  //char str[32];
-  char *str;
+  char str[32];
+  //char *str;
 } Token;
 
 static Token tokens[32] __attribute__((used)) = {};
@@ -99,8 +99,12 @@ static bool make_token(char *e) {
           	//char *p_temp;
           	//p_temp = &tokens[nr_token].str
           	//tokens[nr_token].str = *substr_start;
-          	tokens[nr_token].str = substr_start;
-          	printf("str:%.*s\n",substr_len,tokens[nr_token].str);
+          	//tokens[nr_token].str = substr_start;
+          	//printf("str:%.*s\n",substr_len,tokens[nr_token].str);	// printf 神奇用法
+          	
+          	for (i=0; i < substr_len; i++){
+                  tokens[nr_token].str[i] = substr_start[i];
+          	}
           	break;
         }
 	nr_token++;
