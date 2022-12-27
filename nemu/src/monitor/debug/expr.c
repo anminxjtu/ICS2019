@@ -139,6 +139,7 @@ bool check_parentheses(int p, int q){
 	  if (tokens[i+p].type == '(' || tokens[i+p].type == ')'){
 	    tokens_containers[par_num] = tokens[i+p].type;
 	    par_num++;
+	    printf("%d\n",par_num);
 	  }
           //tokens_containers[i] = tokens[i+p].type; 
           
