@@ -101,6 +101,7 @@ static bool make_token(char *e) {
           	//p_temp = &tokens[nr_token].str
           	//tokens[nr_token].str = *substr_start;
           	tokens[nr_token].str = substr_start;
+          	printf("%s",tokens[nr_token].str);
           	break;
         }
 
