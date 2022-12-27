@@ -135,10 +135,11 @@ bool check_parentheses(int p, int q){
 	char tokens_containers[q-p+1];
 	int par_num = 0;
 	printf("in the function\n");
-	printf("%d\n",tokens[0].type);
+	//printf("%d\n",tokens[0].type);
 	for (int i = 0; i < q-p+1; i++){
 	    tokens_containers[i] = tokens[i+p].type;
-	    printf("tokens[i+p].type%d",tokens[i+p].type);
+	    printf("tokens[i+p].type%d\n",tokens[i+p].type);
+	    printf("tokens_containers[i]%d\n",tokens_containers[i]);
 	    /*printf("tokens[i+p%d].type:%c\n",i+p,tokens[i+p].type);
 	  if (tokens[i+p].type == '(' || tokens[i+p].type == ')'){
 	    tokens_containers[par_num] = tokens[i+p].type;
