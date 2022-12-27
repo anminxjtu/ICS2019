@@ -6,6 +6,8 @@
 #include <sys/types.h>
 #include <regex.h>
 
+bool check_parentheses(int p, int q);
+
 enum {
   TK_NOTYPE = 256, TK_EQ, LETTER, NUM, BRA, KET
 
@@ -121,8 +123,33 @@ static bool make_token(char *e) {
       return false;
     }
   }
+  
+  check_parentheses(0,nr_token);
 
   return true;
+}
+
+bool check_parentheses(int p, int q){
+
+	char tokens_containers[q-p+1];
+	int par_num = 0;
+	for (int i = 0; i < q-p+1; i++){
+	  if (tokens[i+p].type == '(' || tokens[i+p].type == ')'){
+	    tokens_containers[par_num] = tokens[i+p].type;
+	    par_num++;
+	  }
+          //tokens_containers[i] = tokens[i+p].type; 
+          
+          }
+          for (int j = 0; j <par_num; j++){
+             printf("%c",tokens_containers[j]);
+          }
+          printf("\n");
+          if (par_num >0){
+            return true;
+	  }
+	  return false;
+	
 }
 
 uint32_t expr(char *e, bool *success) {
