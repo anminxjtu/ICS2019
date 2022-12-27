@@ -103,7 +103,8 @@ static bool make_token(char *e) {
           	//printf("str:%.*s\n",substr_len,tokens[nr_token].str);	// printf 神奇用法
           	
           	for (i=0; i < substr_len; i++){
-                  tokens[nr_token].str[i] = substr_start[i];
+                  //tokens[nr_token].str[i] = substr_start[i];
+                  tokens[nr_token].str[i] = * (substr_start+i);
                   printf("%c",tokens[nr_token].str[i]);
           	}
           	printf("\n");
