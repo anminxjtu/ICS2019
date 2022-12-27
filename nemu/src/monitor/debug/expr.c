@@ -93,7 +93,6 @@ static bool make_token(char *e) {
          
         tokens[nr_token].type = rules[i].token_type;
 	printf("%d\n",tokens[nr_token].type);
-	nr_token++;
         switch (rules[i].token_type) {
           //default: TODO();
           case NUM:
@@ -104,9 +103,10 @@ static bool make_token(char *e) {
           	printf("%s\n",tokens[nr_token].str);
           	break;
         }
-
+	nr_token++;
         break;
       }
+      
     }
 
     if (i == NR_REGEX) {
