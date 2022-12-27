@@ -149,10 +149,10 @@ bool check_parentheses(int p, int q){
           //tokens_containers[i] = tokens[i+p].type; 
           
           }
-          for (int j = 0; j < q-p+1; j++){
-             printf("%c",tokens_containers[j]);
-          }
-          printf("\n");
+         // for (int j = 0; j < q-p+1; j++){
+         //    printf("%c",tokens_containers[j]);
+          //}
+          //printf("\n");
           if (par_num >0){
             return true;
 	  }
