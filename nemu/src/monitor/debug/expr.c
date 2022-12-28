@@ -255,6 +255,7 @@ int eval(int p, int q){
 	      
 	    
 	  }
+	  printf("----rank-------\n");
 	  for (int i = 0; i < q-p; i++){
 	      printf("%d\n",rank[i]);
 	  }
