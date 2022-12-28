@@ -133,6 +133,7 @@ static bool make_token(char *e) {
 bool check_parentheses(int p, int q){
 
 	int tokens_containers[q-p+1];
+	int braket_containers[q-p+1];
 	int par_num = 0;
 	
 	//printf("in the function\n");
@@ -140,8 +141,9 @@ bool check_parentheses(int p, int q){
 	
 	for (int i = 0; i < q-p; i++){
 	    tokens_containers[i] = tokens[i+p].type;
-	    printf("tokens[i+p].type:%d\n",tokens[i+p].type);
-	    printf("tokens_containers[i]:%d\n",tokens_containers[i]);
+	    
+	    //printf("tokens[i+p].type:%d\n",tokens[i+p].type);
+	    //printf("tokens_containers[i]:%d\n",tokens_containers[i]);
 	    /*printf("tokens[i+p%d].type:%c\n",i+p,tokens[i+p].type);
 	  if (tokens[i+p].type == '(' || tokens[i+p].type == ')'){
 	    tokens_containers[par_num] = tokens[i+p].type;
@@ -155,6 +157,17 @@ bool check_parentheses(int p, int q){
          //    printf("%c",tokens_containers[j]);
           //}
           //printf("\n");
+          
+        for (int i = 0; i <q-p; i++){
+           if (tokens_containers[i] == '(' || tokens_containers[i] == ')'){
+              braket_containers[par_num] =  tokens_containers[i];
+              par_num ++;
+           }
+        }
+        
+        for (int j = 0; j < par_num; j ++){
+            printf("%d\n",braket_containers[j]);
+        }
           if (par_num >0){
             return true;
 	  }
