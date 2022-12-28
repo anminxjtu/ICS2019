@@ -277,7 +277,14 @@ int eval(int p, int q){
 	      }
 	  }
 	  printf("op_index:%d\n",op_index);
-	  
+	  int val1 = eval(p, op_index - 1);
+	  int val2 = eval(op_index + 1, q);
+	  switch (tokens[op_index].type){
+	    case '+': return val1 + val2;
+	    case '-': return val1 - val2;
+	    case '*': return val1 * val2;
+	    case '/': return val1 / val2;
+	  }
 	}
 	return 0;
 }
