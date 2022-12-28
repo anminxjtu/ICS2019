@@ -243,7 +243,7 @@ int eval(int p, int q){
 	  }
 	  // find the main operator
 	  for (int i = 0; i < q - p + 1; i ++){
-	    if (tokens[p+i].type == '('){
+	    if (tokens[p+i].type == BRA){
 	       front_flag = 0;
 	    }
 	    if (front_flag){
@@ -258,7 +258,7 @@ int eval(int p, int q){
 	      }
 	    }
 	    
-	    if (tokens[q-i].type == ')'){
+	    if (tokens[q-i].type == KET){
 	       back_flag = 0;
 	    }
 	    if (back_flag){
