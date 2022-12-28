@@ -159,7 +159,7 @@ bool check_parentheses(int p, int q){
           //printf("\n");
           
         for (int i = 0; i <q-p; i++){
-           if (tokens_containers[i] == '(' || tokens_containers[i] == ')'){
+           if (tokens_containers[i] == BRA || tokens_containers[i] == KET){
               braket_containers[par_num] =  tokens_containers[i];
               par_num ++;
            }
