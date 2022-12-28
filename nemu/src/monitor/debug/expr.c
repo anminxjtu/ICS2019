@@ -284,6 +284,7 @@ int eval(int p, int q){
 	  printf("op_index:%d\n",op_index);
 	  //assert(0);
 	  int val1 = eval(p, op_index - 1);
+	  assert(0);
 	  int val2 = eval(op_index + 1, q);
 	  //assert(0);
 	  switch (tokens[op_index].type){
