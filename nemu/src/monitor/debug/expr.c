@@ -277,11 +277,11 @@ int eval(int p, int q){
 	  for (int i = 0; i < q-p+1; i++){
 	      if (rank[q-p-i] > op){
 	      	op = rank[q-p-i];
-	      	op_index = q-p-i;
+	      	op_index = q-p-i+p;
 	      }
 	  }
 	  printf("op_index:%d\n",op_index);
-	  assert(0);
+	  //assert(0);
 	  int val1 = eval(p, op_index - 1);
 	  int val2 = eval(op_index + 1, q);
 	  switch (tokens[op_index].type){
