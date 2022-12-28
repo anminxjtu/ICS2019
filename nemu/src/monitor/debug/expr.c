@@ -265,7 +265,7 @@ int eval(int p, int q){
 	    }
 	    if (back_flag){
 	      if (tokens[q-i].type != NUM){
-	        op_b = tokens[q+i].type;
+	        op_b = tokens[q-i].type;
 	        switch (op_b){
 	          case '+': rank[q-p-i] = 2; break;
 	          case '-': rank[q-p-i] = 2; break;
