@@ -220,6 +220,9 @@ int eval(int p, int q){
 	  int front_flag = 1;
 	  int back_flag = 1;
 	  int rank[q-p+1];
+	  for (int i = 0; i < q-p; i++){
+	      rank[i] = 0;
+	  }
 	  // find the main operator
 	  for (int i = 0; i < q -p; i ++){
 	    if (tokens[p+i].type == '('){
