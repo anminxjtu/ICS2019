@@ -222,6 +222,7 @@ int eval(int p, int q){
 	}
 	else{
 	  //int op = 0;
+	  //int op_index = 0;
 	  int op_f = 0;
 	  int op_b = 0;
 	  int front_flag = 1;
@@ -266,9 +267,13 @@ int eval(int p, int q){
 	    
 	  }
 	  printf("----rank-------\n");
-	  for (int i = 0; i < q-p; i++){
+	  for (int i = 0; i < q-p+1; i++){
 	      printf("%d\n",rank[i]);
 	  }
+	  /*for (int i = 0; i < q-p; i++){
+	      if (rank[q-p-i])
+	  }*/
+	  
 	}
 	return 0;
 }
