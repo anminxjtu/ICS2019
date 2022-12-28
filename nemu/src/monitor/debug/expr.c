@@ -228,6 +228,14 @@ int eval(int p, int q){
 	  //assert(0);
 	  return eval(p + 1, q - 1);
 	}
+	// delete the space of two sides
+	else if (tokens[p].type == TK_NOTYPE){
+	  return eval(p + 1, q);
+	}
+	else if (tokens[q].type == TK_NOTYPE){
+	  return eval(p, q - 1);
+	}
+	
 	else{
 	  //assert(0);
 	  int op = 0;
