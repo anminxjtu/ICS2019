@@ -199,7 +199,7 @@ bool check_parentheses(int p, int q){
 int eval(int p, int q){
 	Token *begin = tokens + p;
 	Token *end = tokens +q;
-	printf("tokens begin:%p;\tend:%p\n", begin, end);
+	printf("tokens begin:%p;\tend:%p\n;\t%ld", begin, end, end - begin);
 	return 0;
 }
 
