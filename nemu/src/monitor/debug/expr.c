@@ -165,10 +165,12 @@ bool check_parentheses(int p, int q){
            }
         }
         
-        printf("-------braket_containers-------%d\n",par_num);
+        printf("-------braket_containers-------%d:\n",par_num);
         for (int j = 0; j < par_num; j ++){
             printf("%d\n",braket_containers[j]);
         }
+        printf("-------braket_containers-------\n");
+        
           if (par_num >0){
             return true;
 	  }
