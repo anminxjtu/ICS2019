@@ -216,7 +216,7 @@ int eval(int p, int q){
 	}
 	else if (p == q && tokens[p].type != TK_NOTYPE){
 	  printf("NUM:%d\n",atoi(tokens[p].str));
-	  assert(0);
+	  //assert(0);
 	  return atoi(tokens[p].str);
 	}
 	else if (check_parentheses(p,q) == true){
