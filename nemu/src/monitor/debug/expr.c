@@ -213,6 +213,52 @@ int eval(int p, int q){
 	else if (check_parentheses(p,q) == true){
 	  return eval(p + 1, q - 1);
 	}
+	else{
+	  //int op = 0;
+	  int op_f = 0;
+	  int op_b = 0;
+	  int front_flag = 1;
+	  int back_flag = 1;
+	  int rank[q-p+1];
+	  // find the main operator
+	  for (int i = 0; i < q -p; i ++){
+	    if (tokens[p+i].type == '('){
+	       front_flag = 0;
+	    }
+	    if (front_flag){
+	      if (tokens[p+i].type != NUM){
+	        op_f = tokens[p+i].type;
+	        switch (op_f){
+	          case '+': rank[i] = 2; break;
+	          case '-': rank[i] = 2; break;
+	          case '*': rank[i] = 1; break;
+	          case '/': rank[i] = 1; break;
+	        }
+	      }
+	    }
+	    
+	    if (tokens[q-i].type == ')'){
+	       back_flag = 0;
+	    }
+	    if (back_flag){
+	      if (tokens[q-i].type != NUM){
+	        op_b = tokens[q+i].type;
+	        switch (op_b){
+	          case '+': rank[q-p-i] = 2; break;
+	          case '-': rank[q-p-i] = 2; break;
+	          case '*': rank[q-p-i] = 1; break;
+	          case '/': rank[q-p-i] = 1; break;
+	        }
+	      }
+	    }
+	    
+	      
+	    
+	  }
+	  for (int i = 0; i < q-p; i++){
+	      printf("%d\n",rank[i]);
+	  }
+	}
 	return 0;
 }
 
