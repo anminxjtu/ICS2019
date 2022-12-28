@@ -175,7 +175,7 @@ bool check_parentheses(int p, int q){
             if (par_num % 2 == 0){
                int *begin = braket_containers;
                int *end = braket_containers + par_num - 1;
-               printf("begin:%d,end:%d\n",*begin, *end);
+               printf("begin:%p,end:%p\n",begin, end);
                return true;
             }
             
