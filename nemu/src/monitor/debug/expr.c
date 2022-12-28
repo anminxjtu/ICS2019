@@ -210,6 +210,11 @@ int eval(int p, int q){
 	Token *begin = tokens + p;
 	Token *end = tokens +q;
 	printf("tokens begin:%p;\tend:%p;\t%ld\n", begin, end, end - begin + 1);
+	for (int i = 0; i < q-p+1; i++){
+	  printf("%d\t",tokens[p+i].type);
+	}
+	printf("\n");
+	
 	if (p > q) {
 	  printf("bad expression!\n");
 	  return -1;
