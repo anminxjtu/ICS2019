@@ -129,7 +129,7 @@ static bool make_token(char *e) {
   check_parentheses(0,nr_token);
   printf("check_parentheses(0,nr_token-1):%d\n",check_parentheses(0,nr_token-1));
   printf("begin evaling-------------\n");
-  //eval(0,nr_token-1);
+  eval(0,nr_token-1);
   //eval(0,0);
   printf("------------------\n");
 
@@ -228,11 +228,11 @@ int eval(int p, int q){
 	  int front_flag = 1;
 	  int back_flag = 1;
 	  int rank[q-p+1];
-	  for (int i = 0; i < q-p; i++){
+	  for (int i = 0; i < q- p + 1; i++){
 	      rank[i] = 0;
 	  }
 	  // find the main operator
-	  for (int i = 0; i < q -p; i ++){
+	  for (int i = 0; i < q - p + 1; i ++){
 	    if (tokens[p+i].type == '('){
 	       front_flag = 0;
 	    }
