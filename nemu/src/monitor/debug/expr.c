@@ -219,6 +219,7 @@ int eval(int p, int q){
 	  return atoi(tokens[p].str);
 	}
 	else if (check_parentheses(p,q) == true){
+	  printf("p+1:%d\tq-1:%d", p+1, q-1);
 	  assert(0);
 	  return eval(p + 1, q - 1);
 	}
