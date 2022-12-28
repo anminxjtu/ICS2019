@@ -128,7 +128,7 @@ static bool make_token(char *e) {
   
   check_parentheses(0,nr_token);
   printf("begin evaling-------------\n");
-  eval(0,nr_token);
+  //eval(0,nr_token);
   //eval(0,0);
   printf("------------------\n");
 
