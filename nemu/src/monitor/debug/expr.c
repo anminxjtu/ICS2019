@@ -214,7 +214,7 @@ int eval(int p, int q){
 	  printf("bad expression!\n");
 	  return -1;
 	}
-	else if (p == q){
+	else if (p == q && tokens[p].type != TK_NOTYPE){
 	  printf("%d\n",atoi(tokens[p].str));
 	  return atoi(tokens[p].str);
 	}
