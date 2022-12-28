@@ -244,8 +244,8 @@ int eval(int p, int q){
 	  for (int i = 0; i < q - p + 1; i ++){
 	    if (tokens[p+i].type == BRA){
 	       front_flag = 0;
-	       printf("hiting the front flag!\n");
-	       assert(0);
+	       printf("hiting the front flag!-------------------------------------\n");
+	       //assert(0);
 	    }
 	    if (front_flag){
 	      if (tokens[p+i].type != NUM){
@@ -261,7 +261,7 @@ int eval(int p, int q){
 	    
 	    if (tokens[q-i].type == KET){
 	       back_flag = 0;
-	       printf("hiting the back flag!\n");
+	       printf("hiting the back flag!----------------------------------------\n");
 	    }
 	    if (back_flag){
 	      if (tokens[q-i].type != NUM){
