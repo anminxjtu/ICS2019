@@ -129,7 +129,7 @@ static bool make_token(char *e) {
   check_parentheses(0,nr_token);
   printf("begin evaling-------------\n");
   eval(0,nr_token);
-  eval(0,0);
+  //eval(0,0);
   printf("------------------\n");
 
   return true;
@@ -209,6 +209,9 @@ int eval(int p, int q){
 	else if (p == q){
 	  printf("%d\n",atoi(tokens[p].str));
 	  return atoi(tokens[p].str);
+	}
+	else if (check_parentheses(p,q) == true){
+	  return eval(p + 1, q - 1);
 	}
 	return 0;
 }
