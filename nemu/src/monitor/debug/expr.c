@@ -178,9 +178,10 @@ bool check_parentheses(int p, int q){
                printf("begin:%p,end:%p\n",begin, end);
                while (begin < end){
               	      if (*begin == BRA && *end == KET){
+              	         printf("begin:%p,end:%p\n",begin, end);
               	         begin ++;
               	         end --;
-              	         printf("begin:%p,end:%p\n",begin, end);
+              	         
               	      }
               	      else
               	       return false;
