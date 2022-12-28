@@ -176,7 +176,7 @@ bool check_parentheses(int p, int q){
             printf("%d\n",braket_containers[j]);
         }
         printf("-------braket_containers-------\n");
-        
+        // check the legality of EXPRESSION
           if (par_num >0){
             if (par_num % 2 == 0){
                int *begin = braket_containers;
@@ -191,7 +191,13 @@ bool check_parentheses(int p, int q){
               	      else
               	       return false;
                }
-               return true;
+               // check the surrounding braket
+               if (tokens_containers[0] == BRA && tokens_containers[q-p] == KET){
+                 return true;
+               }
+               else
+                 return false;
+               
             }
             
 	  }
