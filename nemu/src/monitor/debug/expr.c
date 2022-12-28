@@ -216,6 +216,7 @@ int eval(int p, int q){
 	}
 	else if (p == q && tokens[p].type != TK_NOTYPE){
 	  printf("%d\n",atoi(tokens[p].str));
+	  assert(0);
 	  return atoi(tokens[p].str);
 	}
 	else if (check_parentheses(p,q) == true){
@@ -284,7 +285,7 @@ int eval(int p, int q){
 	  //assert(0);
 	  int val1 = eval(p, op_index - 1);
 	  int val2 = eval(op_index + 1, q);
-	  assert(0);
+	  //assert(0);
 	  switch (tokens[op_index].type){
 	    case '+': return val1 + val2;
 	    case '-': return val1 - val2;
