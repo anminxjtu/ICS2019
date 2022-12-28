@@ -7,6 +7,7 @@
 #include <regex.h>
 
 bool check_parentheses(int p, int q);
+int eval(int p, int q);
 
 enum {
   TK_NOTYPE = 256, TK_EQ, LETTER, NUM, BRA, KET
@@ -125,6 +126,7 @@ static bool make_token(char *e) {
   }
   
   check_parentheses(0,nr_token);
+  eval(0,nr_token);
   printf("------------------\n");
 
   return true;
@@ -181,7 +183,6 @@ bool check_parentheses(int p, int q){
               	         printf("begin:%p,end:%p\n",begin, end);
               	         begin ++;
               	         end --;
-              	         
               	      }
               	      else
               	       return false;
@@ -194,6 +195,13 @@ bool check_parentheses(int p, int q){
 	
 }
 
+int eval(int p, int q){
+	Token *begin = tokens + p;
+	Token *end = tokens +q;
+	printf("begin:%p;end:%p\n", begin, end);
+	return 0;
+}
+
 uint32_t expr(char *e, bool *success) {
   if (!make_token(e)) {
     *success = false;
@@ -202,6 +210,8 @@ uint32_t expr(char *e, bool *success) {
 
   /* TODO: Insert codes to evaluate the expression. */
   //TODO();
+  
+  
 
   return 0;
 }
