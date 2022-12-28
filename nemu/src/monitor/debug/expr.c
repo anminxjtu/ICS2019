@@ -176,6 +176,15 @@ bool check_parentheses(int p, int q){
                int *begin = braket_containers;
                int *end = braket_containers + par_num - 1;
                printf("begin:%p,end:%p\n",begin, end);
+               while (begin < end){
+              	      if (*begin == BRA && *end == KET){
+              	         begin ++;
+              	         end --;
+              	         printf("begin:%p,end:%p\n",begin, end);
+              	      }
+              	      else
+              	       return false;
+               }
                return true;
             }
             
