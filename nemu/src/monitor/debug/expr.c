@@ -104,13 +104,13 @@ static bool make_token(char *e) {
          
         tokens[nr_token].type = rules[i].token_type;
 	printf("%d\n",tokens[nr_token].type);
-	/*for (i=0; i < substr_len; i++){
+	for (i=0; i < substr_len; i++){
           //tokens[nr_token].str[i] = substr_start[i];
           //tokens[nr_token].str[i] = * (substr_start+i);
           printf("%c",* (substr_start+i));
         }
         //assert(0);
-        printf("\n");*/
+        printf("\n");
           	
         switch (rules[i].token_type) {
           //default: TODO();
