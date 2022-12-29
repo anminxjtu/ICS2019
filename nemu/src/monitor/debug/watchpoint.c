@@ -94,7 +94,7 @@ void dispaly_wp(){
     printf("No watching point!\n");
     return;
   }
-  printf("Num\tExpress\tValue\n");
+  printf("Num\t\tExpress\t\tValue\n");
   while (read_wp -> next != NULL){
     printf("%d\n",read_wp -> NO);
     read_wp = read_wp -> next;
