@@ -21,6 +21,7 @@ void init_wp_pool() {
 /* TODO: Implement the functionality of watchpoint */
 
 int new_wp() {
+  printf("------------------\n");
   WP* temp = head;
   head = free_; // new wp is set as head
   printf("head:%p,free_:%p",head,free_);
