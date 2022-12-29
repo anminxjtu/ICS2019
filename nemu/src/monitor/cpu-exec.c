@@ -25,6 +25,8 @@ void log_clearbuf(void);
 
 static uint64_t g_nr_guest_instr = 0;
 
+bool check_wp();
+
 void monitor_statistic(void) {
   Log("total guest instructions = %ld", g_nr_guest_instr);
 }
@@ -61,7 +63,10 @@ void cpu_exec(uint64_t n) {
   log_clearbuf();
 
     /* TODO: check watchpoints here. */
-    
+    if (check_wp()){
+      nemu_state.state = NEMU_STOP; 
+      break;
+    }
 
 #endif
 

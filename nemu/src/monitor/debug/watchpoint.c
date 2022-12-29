@@ -108,7 +108,34 @@ void display_wp(){
     read_wp = read_wp -> next;
   }
   printf("%d\t%p\t%s\t%d\n", read_wp -> NO, read_wp, read_wp -> expr, read_wp -> expr_value);
-} 
+}
+
+bool check_wp(){
+  if (head == NULL)
+    return false;
+  else{
+    WP *ch_wp = NULL;
+    ch_wp = head;
+    int current_val = 0;
+    bool *success = false;
+    bool *res = false;
+    while (ch_wp -> next != NULL){
+      current_val = expr(ch_wp -> expr, success);
+      if (current_val != ch_wp -> expr_value){
+        printf("WP: %d changes\n",ch_wp -> NO);
+        *res = true;
+      }
+      ch_wp = ch_wp -> next;
+    }
+    current_val = expr(ch_wp -> expr, success);
+    if (current_val != ch_wp -> expr_value){
+      printf("WP: %d changes\n",ch_wp -> NO);
+      *res = true;
+    }
+    return *res;
+  }
+  
+}
   
   
  
