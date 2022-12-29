@@ -26,9 +26,10 @@ int new_wp() {
   temp = head;
   head = free_; // new wp is set as head
   printf("head:%p,free_:%p",head,free_);
-  assert(0);
+  //assert(0);
   (head -> next) = temp;
-  WP *temp2 = free_ -> next; // allocate the first point of free
+  WP *temp2 = NULL;
+  temp2 = free_ -> next; // allocate the first point of free
   free_ = temp2;
   printf("watchpoint %d has been set!\n",head -> NO);
   return head -> NO;
