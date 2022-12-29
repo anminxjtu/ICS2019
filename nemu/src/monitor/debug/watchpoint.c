@@ -27,10 +27,10 @@ int new_wp() {
   head = free_; // new wp is set as head
   printf("head:%p,free_:%p\n",head,free_);
   //assert(0);
-  (head -> next) = temp;
   printf("head -> next:%p\ttemp:%p\n",head -> next,temp);
   WP *temp2 = NULL;
   temp2 = free_ -> next; // allocate the first point of free
+  head -> next = temp; // head free_ : same !!!!!
   printf("temp:%p\n",temp2);
   free_ = temp2;
   printf("temp2:%p\n",free_);
