@@ -55,8 +55,6 @@ void free_wp(int no) {
     wp = &wp_pool[i];  // only & , not (wp_pool + i)
     if ((wp -> NO) == no)
       break;
-    else
-      assert(0);
   }
 
   //WP *temp = NULL;
