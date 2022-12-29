@@ -11,7 +11,7 @@ bool check_parentheses(int p, int q);
 int eval(int p, int q);
 
 enum {
-  TK_NOTYPE = 256, TK_EQ, LETTER, NUM, BRA, KET, HEX, REG
+  TK_NOTYPE = 256, TK_EQ, LETTER, NUM, BRA, KET, HEX, REG, DEREF
 
   /* TODO: Add more token types */
 
@@ -129,13 +129,13 @@ static bool make_token(char *e) {
     }
   }
   
-  check_parentheses(0,nr_token);
+  /*check_parentheses(0,nr_token);
   printf("check_parentheses(0,nr_token-1):%d\n",check_parentheses(0,nr_token-1));
   printf("begin evaling-------------\n");
   eval(0,nr_token-1);
   printf("eval(0,nr_token-1):%d\n",eval(0,nr_token-1));
   //eval(0,0);
-  printf("------------------\n");
+  printf("------------------\n");*/
 
   return true;
 }
@@ -324,7 +324,20 @@ uint32_t expr(char *e, bool *success) {
   /* TODO: Insert codes to evaluate the expression. */
   //TODO();
   
+  for (int i = 0; i < nr_token; i++){
+    if (tokens[i].type == '*' && (i == 0 || tokens[i-1].type == '+' || tokens[i-1].type == '-' || tokens[i-1].type == '*' || tokens[i-1].type == '/'))
+    	tokens[i].type = DEREF;
+  }
   
+  //check_parentheses(0,nr_token);
+  
+  printf("check_parentheses(0,nr_token-1):%d\n",check_parentheses(0,nr_token-1));
+  printf("begin evaling-------------\n");
+  eval(0,nr_token-1);
+  printf("eval(0,nr_token-1):%d\n",eval(0,nr_token-1));
+  //eval(0,0);
+  printf("------------------\n");
+
 
   return 0;
 }
