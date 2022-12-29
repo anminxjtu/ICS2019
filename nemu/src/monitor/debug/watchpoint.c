@@ -26,7 +26,8 @@ int new_wp(char *expression) {
   new_free = free_ -> next;
   free_ -> next = head;
   new_head = free_;
-  new_head -> expr = expression;
+  //new_head -> expr = expression;
+  strcpy(new_head -> expr,expression);
   head = new_head;
   free_ = new_free;
   //head -> expr = expression;
