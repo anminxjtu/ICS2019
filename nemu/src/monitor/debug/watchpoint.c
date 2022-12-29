@@ -60,17 +60,29 @@ void free_wp(int no) {
   //WP *temp = NULL;
   WP *p2wp = NULL;
   p2wp = head;
-  while (true){
-    printf("p2wp -> next:%p\twp:%p\n",p2wp -> next,wp);
-    if ((p2wp -> next) == wp){
-       break;
-    }
-    else {
-     p2wp = p2wp -> next;  // find the p to wp
-    }
+  if (head == wp){ // special situation 
+    WP *new_head = NULL;
+    WP *new_free = NULL;
+    new_head = head -> next;
+    new_free = head;
+    new_free -> next = free_;
+    free_ = new_free;
+    head = new_head;
+    printf("watchpoint %d has been deleted!\n",no);
   }
-  p2wp -> next = wp -> next; // delete the wp from head
-  wp -> next = free_;
-  free_ = wp;  // set wp as first of free
-  printf("watchpoint %d has been deleted!\n",no);
+  else{
+    while (true){
+      printf("p2wp -> next:%p\twp:%p\n",p2wp -> next,wp);
+      if ((p2wp -> next) == wp){
+         break;
+      }
+      else {
+       p2wp = p2wp -> next;  // find the p to wp
+      }
+    }
+    p2wp -> next = wp -> next; // delete the wp from head
+    wp -> next = free_;
+    free_ = wp;  // set wp as first of free
+    printf("watchpoint %d has been deleted!\n",no);
+  }
 }
