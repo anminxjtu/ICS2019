@@ -52,8 +52,7 @@ int new_wp() {
 void free_wp(int no) {
   WP *wp = NULL; // p to no
   for (int i = 0; i < NR_WP; i ++) {
-    wp = wp_pool;
-    printf("11111111111");
+    wp = &wp_pool[i];
     printf("wp -> NO:%d",wp -> NO);
     if ((wp -> NO) == no)
       break;
