@@ -413,10 +413,10 @@ uint32_t expr(char *e, bool *success) {
   printf("check_parentheses(0,nr_token-1):%d\n",check_parentheses(0,nr_token-1));
   printf("begin evaling-------------\n");
   //eval(0,nr_token-1);
-  printf("eval(0,nr_token-1):%d\n",eval(0,nr_token-1));
+  //printf("eval(0,nr_token-1):%d\n",eval(0,nr_token-1));
   //eval(0,0);
   printf("------------------\n");
 
 
-  return 0;
+  return eval(0,nr_token-1);
 }

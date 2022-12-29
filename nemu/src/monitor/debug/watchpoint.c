@@ -5,6 +5,7 @@
 
 static WP wp_pool[NR_WP] = {};
 static WP *head = NULL, *free_ = NULL;
+uint32_t expr(char *e, bool *success);
 
 void init_wp_pool() {
   int i;
@@ -28,6 +29,9 @@ int new_wp(char *expression) {
   new_head = free_;
   //new_head -> expr = expression;
   strcpy(new_head -> expr,expression);
+  
+  bool *success = false;
+  new_head -> expr_value = expr(expression, success);
   head = new_head;
   free_ = new_free;
   //head -> expr = expression;
@@ -100,10 +104,10 @@ void display_wp(){
   }
   printf("Num\t\tAdrss\t\tExpr\t\tValue\n");
   while (read_wp -> next != NULL){
-    printf("%d\t%p\t%s\n", read_wp -> NO, read_wp, read_wp -> expr);
+    printf("%d\t%p\t%s\t%d\n", read_wp -> NO, read_wp, read_wp -> expr, read_wp -> expr_value);
     read_wp = read_wp -> next;
   }
-  printf("%d\t%p\t%s\n", read_wp -> NO, read_wp, read_wp -> expr);
+  printf("%d\t%p\t%s\t%d\n", read_wp -> NO, read_wp, read_wp -> expr, read_wp -> expr_value);
 } 
   
   
