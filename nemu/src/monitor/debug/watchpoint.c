@@ -61,6 +61,7 @@ void free_wp(int no) {
   WP *p2wp = NULL;
   p2wp = head;
   while (true){
+    printf("p2wp -> next:%p\twp:%p\n",p2wp -> next,wp);
     if ((p2wp -> next) == wp){
        break;
     }
