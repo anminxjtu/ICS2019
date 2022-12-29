@@ -8,7 +8,7 @@ typedef struct watchpoint {
   struct watchpoint *next;
 
   /* TODO: Add more members if necessary */
-  char *expr; // char *expr 会出现奇怪错误  expr[32] and strcpy
+  char expr[32]; // char *expr 会出现奇怪错误  expr[32] and strcpy
 
 } WP;
 
