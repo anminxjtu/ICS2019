@@ -98,12 +98,12 @@ void display_wp(){
     printf("No watching point!\n");
     return;
   }
-  printf("Num\t\tExpress\t\tValue\n");
+  printf("Num\t\tAdrss\t\tExpr\t\tValue\n");
   while (read_wp -> next != NULL){
-    printf("%d\t%s\n", read_wp -> NO, read_wp -> expr);
+    printf("%d\t%p\t%s\n", read_wp -> NO, read_wp, read_wp -> expr);
     read_wp = read_wp -> next;
   }
-  printf("%d\t%s\n", read_wp -> NO, read_wp -> expr);
+  printf("%d\t%p\t%s\n", read_wp -> NO, read_wp, read_wp -> expr);
 } 
   
   
