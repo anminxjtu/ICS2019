@@ -15,7 +15,7 @@ char* hex_dec(char *input);
 uint32_t expr(char *e, bool *success);
 int new_wp(char *expression);
 void free_wp(int no);
-void dispaly_wp();
+void display_wp();
 
 /* We use the `readline' library to provide more flexibility to read from stdin. */
 static char* rl_gets() {
@@ -61,7 +61,7 @@ static int cmd_info(char *args){
     isa_reg_display();
   }
   else if(strcmp(args, "w") == 0){
-    dispaly_wp();
+    display_wp();
     return 0;
   }
   else{

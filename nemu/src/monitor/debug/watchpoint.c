@@ -88,7 +88,7 @@ void free_wp(int no) {
   }
 }
 
-void dispaly_wp(){
+void display_wp(){
   WP *read_wp = NULL;
   read_wp = head;
   if (read_wp == NULL){
