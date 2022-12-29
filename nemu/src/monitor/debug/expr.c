@@ -263,8 +263,8 @@ int eval(int p, int q){
 	// reg
 	else if (p == q && tokens[p].type == REG){
 	  bool *success = false;
-	  printf("%x\n", isa_reg_str2val(tokens[p].str, success));
-	  return isa_reg_str2val(tokens[p].str, success);
+	  printf("%x\n", isa_reg_str2val(tokens[p].str+1, success));
+	  return isa_reg_str2val(tokens[p].str+1, success);
 	}
 	// delete ()
 	else if (check_parentheses(p,q) == true){
