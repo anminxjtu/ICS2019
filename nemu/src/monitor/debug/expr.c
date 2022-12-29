@@ -126,7 +126,7 @@ static bool make_token(char *e) {
                   tokens[nr_token].str[j] = * (substr_start+j);
                   //printf("%c",tokens[nr_token].str[j]);
           	}
-          	assert(0);
+          	//assert(0);
           	//printf("\n");
           	break;
           case REG:
@@ -135,7 +135,7 @@ static bool make_token(char *e) {
                   tokens[nr_token].str[j] = * (substr_start+j);
                   printf("%c",tokens[nr_token].str[j]);
           	}
-          	assert(0);
+          	//assert(0);
           	printf("\n");
           	break;
           case TK_EQ:  logical_expr = 1; logical_position = nr_token; break;
