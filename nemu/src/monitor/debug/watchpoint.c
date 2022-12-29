@@ -23,8 +23,8 @@ void init_wp_pool() {
 int new_wp() {
   printf("------------------\n");
   WP *temp = NULL;
-  head = free_; // new wp is set as head
   temp = head;
+  head = free_; // new wp is set as head
   printf("head:%p,free_:%p\n",head,free_);
   //assert(0);
   (head -> next) = temp;
