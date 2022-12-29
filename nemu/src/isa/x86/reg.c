@@ -84,5 +84,31 @@ void isa_reg_display() {
 }
 
 uint32_t isa_reg_str2val(const char *s, bool *success) {
-  return 0;
+  int which_set = -1;
+  int reg_index = 0;
+  uint32_t reg_array[] = {cpu.eax, cpu.ecx, cpu.edx, cpu.ebx, cpu.esp, cpu.ebp, cpu.esi, cpu.edi};
+  for (int i = 0; i < 8; i++){
+    if (strcmp(s,regsl[i]) == 0){
+      which_set = 1;
+      reg_index = i;
+      break;
+    }
+    if (strcmp(s,regsw[i]) == 0){
+      which_set = 2;
+      reg_index = i;
+      break;
+    }
+    if (strcmp(s,regsb[i]) == 0){
+      which_set = 3;
+      reg_index = i;
+      break;
+    }
+  }
+  assert(!(which_set == -1));
+  switch (which_set){
+    case 1: return reg_array[reg_index];
+    case 2: return reg_array[reg_index] & 0xffff;
+    case 3: return reg_array[reg_index] & 0xff;
+  }
+  return -1;
 }

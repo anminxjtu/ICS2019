@@ -9,6 +9,7 @@
 
 bool check_parentheses(int p, int q);
 int eval(int p, int q);
+uint32_t isa_reg_str2val(const char *s, bool *success);
 
 enum {
   TK_NOTYPE = 256, TK_EQ, LETTER, NUM, BRA, KET, HEX, REG, DEREF, NOT_EQ, AND
@@ -246,16 +247,6 @@ int eval(int p, int q){
 	  printf("bad expression!\n");
 	  return -1;
 	}
-	else if (p == q && tokens[p].type != TK_NOTYPE){
-	  printf("NUM:%d\n",atoi(tokens[p].str));
-	  //assert(0);
-	  return atoi(tokens[p].str);
-	}
-	else if (check_parentheses(p,q) == true){
-	  //printf("p+1:%d\tq-1:%d", p+1, q-1);
-	  //assert(0);
-	  return eval(p + 1, q - 1);
-	}
 	// delete the space of two sides
 	else if (tokens[p].type == TK_NOTYPE){
 	  return eval(p + 1, q);
@@ -263,6 +254,25 @@ int eval(int p, int q){
 	else if (tokens[q].type == TK_NOTYPE){
 	  return eval(p, q - 1);
 	}
+	// NUM
+	else if (p == q && tokens[p].type == NUM){
+	  printf("NUM:%d\n",atoi(tokens[p].str));
+	  //assert(0);
+	  return atoi(tokens[p].str);
+	}
+	// reg
+	else if (p == q && tokens[p].type == REG){
+	  bool *success = false;
+	  printf("%x\n", isa_reg_str2val(tokens[p].str, success));
+	  return isa_reg_str2val(tokens[p].str, success);
+	}
+	// delete ()
+	else if (check_parentheses(p,q) == true){
+	  //printf("p+1:%d\tq-1:%d", p+1, q-1);
+	  //assert(0);
+	  return eval(p + 1, q - 1);
+	}
+	
 	// logical expression judge
 	else if(logical_expr){
 	  if (p < logical_position && q > logical_position){
