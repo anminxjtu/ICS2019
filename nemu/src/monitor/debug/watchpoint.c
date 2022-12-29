@@ -58,7 +58,8 @@ void free_wp(int no) {
   }
 
   //WP *temp = NULL;
-  WP *p2wp = head;
+  WP *p2wp = NULL;
+  p2wp = head;
   while (true){
     if ((p2wp -> next) == wp){
        break;
