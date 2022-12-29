@@ -25,7 +25,7 @@ int new_wp() {
   WP *temp = NULL;
   temp = head;
   head = free_; // new wp is set as head
-  printf("head:%p,free_:%p",head,free_);
+  printf("head:%p,free_:%p\n",head,free_);
   //assert(0);
   (head -> next) = temp;
   WP *temp2 = NULL;
