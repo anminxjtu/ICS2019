@@ -118,21 +118,21 @@ bool check_wp(){
     ch_wp = head;
     int current_val = 0;
     bool *success = false;
-    bool *res = false;
+    bool res = false;
     while (ch_wp -> next != NULL){
       current_val = expr(ch_wp -> expr, success);
       if (current_val != ch_wp -> expr_value){
         printf("WP: %d changes\n",ch_wp -> NO);
-        *res = true;
+        res = true;
       }
       ch_wp = ch_wp -> next;
     }
     current_val = expr(ch_wp -> expr, success);
     if (current_val != ch_wp -> expr_value){
       printf("WP: %d changes\n",ch_wp -> NO);
-      *res = true;
+      res = true;
     }
-    return *res;
+    return res;
   }
   
 }
