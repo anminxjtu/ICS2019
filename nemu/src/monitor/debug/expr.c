@@ -11,7 +11,7 @@ bool check_parentheses(int p, int q);
 int eval(int p, int q);
 
 enum {
-  TK_NOTYPE = 256, TK_EQ, LETTER, NUM, BRA, KET
+  TK_NOTYPE = 256, TK_EQ, LETTER, NUM, BRA, KET, HEX
 
   /* TODO: Add more token types */
 
@@ -38,7 +38,8 @@ static struct rule {
   {"[d]", 5},
   {"[a-z]+", LETTER},
   {"[\\d+]", 8},
-  {"[0-9]+", NUM}
+  {"[0-9]+", NUM},
+  {"0x[0-9]", HEX}
 
 };
 
