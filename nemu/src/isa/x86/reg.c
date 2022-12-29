@@ -84,6 +84,9 @@ void isa_reg_display() {
 }
 
 uint32_t isa_reg_str2val(const char *s, bool *success) {
+  char *pc ="pc";
+  if (strcmp(s,pc) == 0)
+    return cpu.pc;
   int which_set = -1;
   int reg_index = 0;
   uint32_t reg_array[] = {cpu.eax, cpu.ecx, cpu.edx, cpu.ebx, cpu.esp, cpu.ebp, cpu.esi, cpu.edi};
