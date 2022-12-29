@@ -57,8 +57,8 @@ void free_wp(int no) {
     printf("wp -> NO:%d",wp -> NO);
     if ((wp -> NO) == no)
       break;
-    else
-      assert(0);
+    
+      //assert(0);
   }
 
   //WP *temp = NULL;
