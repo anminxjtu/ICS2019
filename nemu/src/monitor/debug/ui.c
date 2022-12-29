@@ -102,7 +102,7 @@ static int cmd_x(char *args){
     	printf("%08x\n",paddr_read(expr_value, 4));
     	expr_value = expr_value + 4;
     	addr_index = addr_index + 4;
-    	hex_dec(expr_decimal);
+    	//hex_dec(expr_decimal);
     }
     
   return 0;
