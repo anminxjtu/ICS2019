@@ -126,6 +126,7 @@ static bool make_token(char *e) {
                   tokens[nr_token].str[i] = * (substr_start+i);
                   //printf("%c",tokens[nr_token].str[i]);
           	}
+          	assert(0);
           	//printf("\n");
           	break;
           case REG:
