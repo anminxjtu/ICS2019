@@ -104,13 +104,13 @@ static bool make_token(char *e) {
          
         tokens[nr_token].type = rules[i].token_type;
 	printf("%d\n",tokens[nr_token].type);
-	/*for (i=0; i < substr_len; i++){
+	for (int j=0; j < substr_len; j++){
           //tokens[nr_token].str[i] = substr_start[i];
           //tokens[nr_token].str[i] = * (substr_start+i);
-          printf("%c",* (substr_start+i));
+          printf("%c",* (substr_start+j));
         }
         //assert(0);
-        printf("\n");*/
+        printf("\n");
           	
         switch (rules[i].token_type) {
           //default: TODO();
@@ -121,19 +121,19 @@ static bool make_token(char *e) {
           	//tokens[nr_token].str = substr_start;
           	//printf("str:%.*s\n",substr_len,tokens[nr_token].str);	// printf 神奇用法
           	
-          	for (i=0; i < substr_len; i++){
-                  //tokens[nr_token].str[i] = substr_start[i];
-                  tokens[nr_token].str[i] = * (substr_start+i);
-                  //printf("%c",tokens[nr_token].str[i]);
+          	for (int j=0; j < substr_len; j++){
+                  //tokens[nr_token].str[j] = substr_start[j];
+                  tokens[nr_token].str[j] = * (substr_start+j);
+                  //printf("%c",tokens[nr_token].str[j]);
           	}
           	assert(0);
           	//printf("\n");
           	break;
           case REG:
-          	for (i=0; i < substr_len; i++){
-                  //tokens[nr_token].str[i] = substr_start[i];
-                  tokens[nr_token].str[i] = * (substr_start+i);
-                  printf("%c",tokens[nr_token].str[i]);
+          	for (int j=0; j < substr_len; j++){
+                  //tokens[nr_token].str[j] = substr_start[j];
+                  tokens[nr_token].str[j] = * (substr_start+j);
+                  printf("%c",tokens[nr_token].str[j]);
           	}
           	assert(0);
           	printf("\n");
