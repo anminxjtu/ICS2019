@@ -13,7 +13,7 @@ uint32_t instr_fetch(vaddr_t *pc, int len);
 uint32_t paddr_read(paddr_t addr, int len);
 char* hex_dec(char *input);
 uint32_t expr(char *e, bool *success);
-int new_wp();
+int new_wp(char *expression);
 void free_wp(int no);
 void dispaly_wp();
 
@@ -123,7 +123,7 @@ static int cmd_p(char *args){
 }
 
 static int cmd_w(char *args){
-  new_wp();
+  new_wp(args);
   return 0;
 }
 

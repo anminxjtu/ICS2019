@@ -20,7 +20,7 @@ void init_wp_pool() {
 
 /* TODO: Implement the functionality of watchpoint */
 
-int new_wp() {
+int new_wp(char *expression) {
   WP *new_head = NULL;
   WP *new_free = NULL;
   new_free = free_ -> next;
@@ -28,6 +28,7 @@ int new_wp() {
   new_head = free_;
   head = new_head;
   free_ = new_free;
+  head -> expr = expression;
   printf("watchpoint %d has been set!\n",head -> NO);
   return head -> NO;
   
@@ -96,10 +97,10 @@ void dispaly_wp(){
   }
   printf("Num\t\tExpress\t\tValue\n");
   while (read_wp -> next != NULL){
-    printf("%d\n",read_wp -> NO);
+    printf("%d\n\t%s", read_wp -> NO, read_wp -> expr);
     read_wp = read_wp -> next;
   }
-  printf("%d\n",read_wp -> NO);
+  printf("%d\n\t%s", read_wp -> NO, read_wp -> expr);
 } 
   
   
