@@ -33,7 +33,7 @@ int new_wp() {
   temp2 = free_ -> next; // allocate the first point of free
   printf("temp:%p\n",temp2);
   free_ = temp2;
-  printf("temp:%p\n",free_);
+  printf("temp2:%p\n",free_);
   printf("watchpoint %d has been set!\n",head -> NO);
   return head -> NO;
 }
