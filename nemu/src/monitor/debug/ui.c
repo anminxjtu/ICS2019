@@ -13,6 +13,8 @@ uint32_t instr_fetch(vaddr_t *pc, int len);
 uint32_t paddr_read(paddr_t addr, int len);
 char* hex_dec(char *input);
 uint32_t expr(char *e, bool *success);
+int new_wp();
+void free_wp(int no);
 
 /* We use the `readline' library to provide more flexibility to read from stdin. */
 static char* rl_gets() {
@@ -118,6 +120,16 @@ static int cmd_p(char *args){
   return 0;
 }
 
+static int cmd_w(char *args){
+  new_wp();
+  return 0;
+}
+
+static int cmd_d(char *args){
+  free_wp(atoi(args));
+  return 0;
+}
+
 static struct {
   char *name;
   char *description;
@@ -130,6 +142,8 @@ static struct {
   { "info", "Query the program", cmd_info},
   { "x", "Scan DRAM", cmd_x},
   { "p", "Evaluate the EXPR", cmd_p},
+  { "w", "Set the watchpoint", cmd_w},
+  { "d", "Delete the watchpoint", cmd_d},
 
   /* TODO: Add more commands */
 

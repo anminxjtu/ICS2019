@@ -14,7 +14,7 @@ int hex2dec(char *input_hex)
    for (int i = 0; i < hex_len-2; i++){
      dec += pow * bit_convert(input_hex + hex_len -1 - i);
      pow *= 16;
-     * (input_hex + hex_len -1 - i) = '\0';
+     * (input_hex + hex_len -1 - i) = '\0'; // delete the last character of input_hex
    }
    printf("dec is-------:%d\n",dec);
    return dec;

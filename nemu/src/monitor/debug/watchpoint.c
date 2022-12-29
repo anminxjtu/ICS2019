@@ -20,4 +20,37 @@ void init_wp_pool() {
 
 /* TODO: Implement the functionality of watchpoint */
 
+int new_wp() {
+  WP* temp = head;
+  head = free_; // new wp is set as head
+  head -> next = temp;
+  free_ = free_ -> next; // allocate the first point of free
+  printf("watchpoint %d has been set!\n",head -> NO);
+  return head -> NO;
+}
 
+void free_wp(int no) {
+  WP *wp = NULL; // p to no
+  for (int i = 0; i < NR_WP; i ++) {
+    wp = wp_pool + i;
+    if ((wp -> NO) == no)
+      break;
+    else
+      assert(0);
+  }
+
+  //WP *temp = NULL;
+  WP *p2wp = head;
+  while (true){
+    if ((p2wp -> next) == wp){
+       break;
+    }
+    else {
+     p2wp = p2wp -> next;  // find the p to wp
+    }
+  }
+  p2wp -> next = wp -> next; // delete the wp from head
+  wp -> next = free_;
+  free_ = wp;  // set wp as first of free
+  printf("watchpoint %d has been deleted!\n",no);
+}
