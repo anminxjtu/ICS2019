@@ -86,3 +86,21 @@ void free_wp(int no) {
     printf("watchpoint %d has been deleted!\n",no);
   }
 }
+
+void dispaly_wp(){
+  WP *read_wp = NULL;
+  read_wp = head;
+  if (read_wp == NULL){
+    printf("No watching point!\n");
+    return;
+  }
+  printf("Num\tExpress\tValue\n");
+  while (read_wp -> next != NULL){
+    printf("%d\n",read_wp -> NO);
+    read_wp = read_wp -> next;
+  }
+  printf("%d\n",read_wp -> NO);
+} 
+  
+  
+ 
