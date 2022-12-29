@@ -41,7 +41,7 @@ static struct rule {
   {"[(]", BRA},
   {"[)]", KET},
   {"[d]", 5},
-  {"0x[0-9]+", HEX},
+  {"0x[0-9abcdef]+", HEX},
   {"\\$[a-z]+", REG},
   {"[a-z]+", LETTER},
   {"[\\d+]", 8},
