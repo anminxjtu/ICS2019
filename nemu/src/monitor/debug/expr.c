@@ -11,7 +11,7 @@ bool check_parentheses(int p, int q);
 int eval(int p, int q);
 
 enum {
-  TK_NOTYPE = 256, TK_EQ, LETTER, NUM, BRA, KET, HEX, REG, DEREF
+  TK_NOTYPE = 256, TK_EQ, LETTER, NUM, BRA, KET, HEX, REG, DEREF, NOT_EQ, AND
 
   /* TODO: Add more token types */
 
@@ -32,6 +32,8 @@ static struct rule {
   {"\\*", '*'},
   {"/",'/'},
   {"==", TK_EQ},        // equal
+  {"!=", NOT_EQ},
+  {"&&", AND},
  
   {"[(]", BRA},
   {"[)]", KET},
@@ -74,6 +76,8 @@ typedef struct token {
 
 static Token tokens[32] __attribute__((used)) = {};
 static int nr_token __attribute__((used))  = 0;
+static int logical_expr = 0;
+static int logical_position = 0;
 
 static bool make_token(char *e) {
   int position = 0;
@@ -116,6 +120,9 @@ static bool make_token(char *e) {
           	}
           	//printf("\n");
           	break;
+          case TK_EQ:  logical_expr = 1; logical_position = nr_token; break;
+          case NOT_EQ: logical_expr = 1; logical_position = nr_token; break;
+          case AND:    logical_expr = 1; logical_position = nr_token; break;
         }
 	nr_token++;
         break;
@@ -237,6 +244,18 @@ int eval(int p, int q){
 	}
 	else if (tokens[q].type == TK_NOTYPE){
 	  return eval(p, q - 1);
+	}
+	// logical expression judge
+	else if(logical_expr){
+	  if (p < logical_position && q > logical_position){
+	    int val1 = eval(p, logical_position - 1);
+	    int val2 = eval(logical_position + 1, q);
+	    switch (tokens[logical_position].type){
+	      case  TK_EQ: return val1 == val2;
+	      case NOT_EQ: return val1 != val2;
+	      case    AND: return val1 && val2;
+	    }
+	  }
 	}
 	
 	else{
