@@ -1,6 +1,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <assert.h>
 
 int bit_convert(char *hex_bit);
 
@@ -29,5 +30,6 @@ int bit_convert(char *hex_bit){
     case 'e': return 14;
     case 'f': return 15;
   }
+  assert(0);
   return -1;
 }

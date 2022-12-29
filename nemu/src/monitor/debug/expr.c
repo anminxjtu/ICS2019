@@ -141,6 +141,15 @@ static bool make_token(char *e) {
           	//assert(0);
           	printf("\n");
           	break;
+          case HEX:
+          	for (int j=0; j < substr_len; j++){
+                  //tokens[nr_token].str[j] = substr_start[j];
+                  tokens[nr_token].str[j] = * (substr_start+j);
+                  printf("%c",tokens[nr_token].str[j]);
+          	}
+          	//assert(0);
+          	printf("\n");
+          	break;
           case TK_EQ:  logical_expr = 1; logical_position = nr_token; break;
           case NOT_EQ: logical_expr = 1; logical_position = nr_token; break;
           case AND:    logical_expr = 1; logical_position = nr_token; break;
