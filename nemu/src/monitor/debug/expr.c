@@ -120,6 +120,14 @@ static bool make_token(char *e) {
           	}
           	//printf("\n");
           	break;
+          case REG:
+          	for (i=0; i < substr_len; i++){
+                  //tokens[nr_token].str[i] = substr_start[i];
+                  tokens[nr_token].str[i] = * (substr_start+i);
+                  printf("%c",tokens[nr_token].str[i]);
+          	}
+          	printf("\n");
+          	break;
           case TK_EQ:  logical_expr = 1; logical_position = nr_token; break;
           case NOT_EQ: logical_expr = 1; logical_position = nr_token; break;
           case AND:    logical_expr = 1; logical_position = nr_token; break;
