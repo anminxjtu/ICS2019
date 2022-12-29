@@ -1,5 +1,6 @@
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 int bit_convert(char *hex_bit);
 
@@ -13,6 +14,7 @@ int hex2dec(char *input_hex)
      dec += pow * bit_convert(input_hex + hex_len -1 - i);
      pow *= 16;
    }
+   printf("dec is-------:%d\n",dec);
    return dec;
 }
 
