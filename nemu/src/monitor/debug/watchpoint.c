@@ -21,7 +21,18 @@ void init_wp_pool() {
 /* TODO: Implement the functionality of watchpoint */
 
 int new_wp() {
-  printf("------------------\n");
+  WP *new_head = NULL;
+  WP *new_free = NULL;
+  new_free = free_ -> next;
+  free_ -> next = head;
+  new_head = free_;
+  head = new_head;
+  free_ = new_free;
+  printf("watchpoint %d has been set!\n",head -> NO);
+  return head -> NO;
+  
+  
+  /*printf("------------------\n");
   WP *temp = NULL;
   temp = head;
   head = free_; // new wp is set as head
@@ -35,7 +46,7 @@ int new_wp() {
   free_ = temp2;
   printf("temp2:%p\n",free_);
   printf("watchpoint %d has been set!\n",head -> NO);
-  return head -> NO;
+  return head -> NO;*/
 }
 
 void free_wp(int no) {
