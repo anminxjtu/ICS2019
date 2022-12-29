@@ -10,6 +10,7 @@
 bool check_parentheses(int p, int q);
 int eval(int p, int q);
 uint32_t isa_reg_str2val(const char *s, bool *success);
+uint32_t paddr_read(paddr_t addr, int len);
 
 enum {
   TK_NOTYPE = 256, TK_EQ, LETTER, NUM, BRA, KET, HEX, REG, DEREF, NOT_EQ, AND
@@ -309,10 +310,11 @@ int eval(int p, int q){
 	      if (tokens[p+i].type != NUM){
 	        op_f = tokens[p+i].type;
 	        switch (op_f){
-	          case '+': rank[i] = 2; break;
-	          case '-': rank[i] = 2; break;
-	          case '*': rank[i] = 1; break;
-	          case '/': rank[i] = 1; break;
+	          case '+':   rank[i] = 3; break;
+	          case '-':   rank[i] = 3; break;
+	          case '*':   rank[i] = 2; break;
+	          case '/':   rank[i] = 2; break;
+	          case DEREF: rank[i] = 1; break;
 	        }
 	      }
 	    }
@@ -325,10 +327,11 @@ int eval(int p, int q){
 	      if (tokens[q-i].type != NUM){
 	        op_b = tokens[q-i].type;
 	        switch (op_b){
-	          case '+': rank[q-p-i] = 2; break;
-	          case '-': rank[q-p-i] = 2; break;
-	          case '*': rank[q-p-i] = 1; break;
-	          case '/': rank[q-p-i] = 1; break;
+	          case '+':   rank[q-p-i] = 3; break;
+	          case '-':   rank[q-p-i] = 3; break;
+	          case '*':   rank[q-p-i] = 2; break;
+	          case '/':   rank[q-p-i] = 2; break;
+	          case DEREF: rank[q-p-i] = 1; break;
 	        }
 	      }
 	    }
@@ -348,6 +351,9 @@ int eval(int p, int q){
 	  }
 	  printf("op_index:%d\n",op_index);
 	  //assert(0);
+	  if (tokens[op_index].type == DEREF){
+	    return paddr_read(eval(op_index+1,q),1);
+	  }
 	  int val1 = eval(p, op_index - 1);
 	  //assert(0);
 	  int val2 = eval(op_index + 1, q);
