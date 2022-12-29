@@ -29,6 +29,7 @@ int new_wp(char *expression) {
   head = new_head;
   free_ = new_free;
   head -> expr = expression;
+  printf("%s\n",head -> expr);
   printf("watchpoint %d has been set!\n",head -> NO);
   return head -> NO;
   
