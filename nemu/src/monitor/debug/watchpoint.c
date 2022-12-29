@@ -97,10 +97,10 @@ void dispaly_wp(){
   }
   printf("Num\t\tExpress\t\tValue\n");
   while (read_wp -> next != NULL){
-    printf("%d\n\t%s", read_wp -> NO, read_wp -> expr);
+    printf("%d\t%s\n", read_wp -> NO, read_wp -> expr);
     read_wp = read_wp -> next;
   }
-  printf("%d\n\t%s", read_wp -> NO, read_wp -> expr);
+  printf("%d\t%s\n", read_wp -> NO, read_wp -> expr);
 } 
   
   
