@@ -28,7 +28,7 @@ int new_wp() {
   printf("head:%p,free_:%p\n",head,free_);
   //assert(0);
   (head -> next) = temp;
-  printf("temp:%p\n",temp);
+  printf("head -> next:%p\ttemp:%p\n",head -> next,temp);
   WP *temp2 = NULL;
   temp2 = free_ -> next; // allocate the first point of free
   printf("temp:%p\n",temp2);
