@@ -123,6 +123,7 @@ bool check_wp(){
       current_val = expr(ch_wp -> expr, success);
       if (current_val != ch_wp -> expr_value){
         printf("WP: %d changes\n",ch_wp -> NO);
+        ch_wp -> expr_value = current_val;
         res = true;
       }
       ch_wp = ch_wp -> next;
@@ -130,6 +131,7 @@ bool check_wp(){
     current_val = expr(ch_wp -> expr, success);
     if (current_val != ch_wp -> expr_value){
       printf("WP: %d changes\n",ch_wp -> NO);
+      ch_wp -> expr_value = current_val;
       res = true;
     }
     return res;
