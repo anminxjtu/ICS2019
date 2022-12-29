@@ -127,7 +127,6 @@ static bool make_token(char *e) {
                   printf("%c",tokens[nr_token].str[i]);
           	}
           	//assert(0);
-          	printf("======================");
           	printf("\n");
           	break;
           case TK_EQ:  logical_expr = 1; logical_position = nr_token; break;
